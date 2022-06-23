@@ -1,21 +1,13 @@
-name: "Hit a webhook"
- 
-on:
-  push:
-    tags:
-      - '**'
- 
-     steps:
-      - uses: actions/checkout@v2
-      - run: git config --global user.email "cascornelissen07@gmail.com"
-      - run: git config --global user.name "ShadowFokx"
-      - run: git commit --message 'Something cool'
-      - run: git push
- 
+name: my workflow
+on: push
+
 jobs:
-  run-updater:
-    runs-on: ubuntu-latest
+  name-of-job:
+    runs-on: windows-latest
+    defaults:
+      run:
+        shell: pwsh
     steps:
-    - name: REST API with curl
-      run: |
-        curl -fsSL https://zmk.dev/setup.sh"
+      - name: Hello world
+        run: |
+          write-output "Hello World"
