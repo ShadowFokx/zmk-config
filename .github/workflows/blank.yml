@@ -5,6 +5,13 @@ on:
     tags:
       - '**'
  
+     steps:
+      - uses: actions/checkout@v2
+      - run: git config --global user.email "cascornelissen07@gmail.com"
+      - run: git config --global user.name "ShadowFokx"
+      - run: git commit --message 'Something cool'
+      - run: git push
+ 
 jobs:
   run-updater:
     runs-on: ubuntu-latest
